@@ -1,0 +1,161 @@
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(12, 15, 20, 0.06);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  display: block;
+  max-width: 100%;
+}
+
+.muted {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.about {
+  margin-top: 10px;
+}
+
+.profile-left {
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-right {
+  padding-left: 16px;
+  min-width: 0;
+}
+
+.profile .about {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.profile-right h2 { margin: 0 0 6px 0; }
+.profile-right .muted { margin: 0 0 8px 0; }
+
+.card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.card h4 {
+  margin: 0 0 6px 0;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-item {
+  margin-top: 14px;
+}
+
+.skill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.skill-bar {
+  background: #f2f4f8;
+  height: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+}
+
+.experience-item {
+  margin-top: 14px;
+}
+
+/* Layout container */
+.container {
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 8px auto; 
+  padding: 20px 24px;
+  width: 100%;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+  margin-top: 8px; 
+}
+
+.left-col {
+  position: static; 
+  top: auto;
+  align-self: start;
+}
+
+.right-col {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px; 
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1400px) {
+  .container { padding: 32px 48px; }
+  .main-grid { grid-template-columns: 380px minmax(0, 1fr); gap: 48px; }
+  .avatar { width: 180px; height: 180px; }
+  .card { padding: 24px; }
+}

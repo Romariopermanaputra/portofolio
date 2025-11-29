@@ -1,0 +1,26 @@
+{
+  "name": "Romario Permana Putra",
+  "npm": "L200230260",
+  "photo": "foto.jpg",
+  "about": "Mahasiswa UMS dengan minat pada pengembangan web fullstack.",
+  "skills": [
+    { "name": "HTML/CSS", "level": 60 },
+    { "name": "JavaScript", "level": 55 },
+    { "name": "React", "level": 50 },
+    { "name": "Node.js", "level": 60 }
+  ],
+  "experiences": [
+    {
+      "title": "Frontend Developer Intern",
+      "organization": "Universitas Muhammadiyah Surakarta",
+      "year": "2025",
+      "description": "Mengembangkan fitur frontend menggunakan React."
+    },
+    {
+      "title": "Asisten Praktikum",
+      "organization": "Universitas Muhammadiyah Surakarta",
+      "year": "2025",
+      "description": "Membantu pengajaran materi Web Programming, menilai tugas mahasiswa, dan memberikan sesi bimbingan."
+    }
+  ]
+}
