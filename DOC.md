@@ -24,5 +24,5 @@ Syarat: GitHub repo terhubung dan sudah berisi commit terakhir
 https://portofolio-xi-ruddy.vercel.app/
 
 ## 5. Screenshot
-image.png
+/image.png
 
