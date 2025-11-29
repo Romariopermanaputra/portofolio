@@ -5,15 +5,19 @@ import './components.css'
 export default function Profile() {
   const [photoSrc, setPhotoSrc] = useState(() => {
     if (!data.photo) return '/vite.svg'
-    const val = String(data.photo)
+    const val = String(data.photo).trim()
     if (val.startsWith('http') || val.startsWith('/')) return val
-   
-    return `/${val}`
+    // Prefer `src/assets` bundle resolution; fallback to `public/` root
+    try {
+      return new URL(`../assets/${val}`, import.meta.url).href
+    } catch (err) {
+      return `/${val}`
+    }
   })
 
   return (
     <section id="profile" className="card profile">
-      <h3></h3>
+      <h3>Profil</h3>
       <div className="profile-left">
         <img src={photoSrc} alt={data.name} className="avatar" onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/200'; setPhotoSrc('https://via.placeholder.com/200') }} />
       </div>

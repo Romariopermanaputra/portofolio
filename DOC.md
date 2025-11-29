@@ -58,3 +58,31 @@ Contoh: ganti `photo` pada `src/dataMahasiswa.json` menjadi:
 ```
 
 Aplikasi sudah dikonfigurasi untuk memuat file foto dari `public/foto.jpg` ketika `photo` berisi nama file saja. Jika Anda ingin menggunakan foto dari URL eksternal, gunakan URL lengkap (mis. `https://.../foto.jpg`).
+
+### Cara memastikan foto muncul di Vercel
+1. Letakkan `foto.jpg` di `public/` (path final: `public/foto.jpg`).
+2. Pastikan `src/dataMahasiswa.json` menunjuk ke `"foto.jpg"` (atau `"/foto.jpg"`).
+3. Commit file `public/foto.jpg` ke repo dan push:
+
+```powershell
+git add public/foto.jpg
+git commit -m "chore: add foto profil to public"
+git push origin main
+```
+
+4. Build secara lokal untuk memastikan file tercopy ke folder `dist/`:
+
+```powershell
+npm run build
+dir dist\
+# Pastikan dist\foto.jpg atau dist\assets\... (tergantung) ada
+```
+
+5. Deploy ke Vercel (hubungkan repo GitHub, atau gunakan CLI `vercel`):
+	- Deploy dari GitHub: import repository, lalu Vercel akan menjalankan build.
+	- Pastikan output `dist/foto.jpg` selama build dan konfirmasi di URL deployed `https://<your-site>.vercel.app/foto.jpg` — jika dapat diakses maka foto tersedia untuk profile.
+
+6. Jika tidak muncul setelah deploy:
+	- Periksa log build di Vercel, pastikan file tidak di-ignore, dan file benar berada pada lokasi `public/foto.jpg`.
+	- Pastikan `src/dataMahasiswa.json` menggunakan `"foto.jpg"` (tanpa spasi), atau mengarah ke URL eksternal yang valid.
+Aplikasi sudah dikonfigurasi untuk memuat file foto dari `public/foto.jpg` ketika `photo` berisi nama file saja. Jika Anda ingin menggunakan foto dari URL eksternal, gunakan URL lengkap (mis. `https://.../foto.jpg`).
