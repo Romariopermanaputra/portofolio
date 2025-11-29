@@ -7,17 +7,13 @@ export default function Profile() {
     if (!data.photo) return '/vite.svg'
     const val = String(data.photo).trim()
     if (val.startsWith('http') || val.startsWith('/')) return val
-    // Prefer `src/assets` bundle resolution; fallback to `public/` root
-    try {
-      return new URL(`../assets/${val}`, import.meta.url).href
-    } catch (err) {
-      return `/${val}`
-    }
+    // default to public root for local files (public/foto.jpg)
+    return `/${val}`
   })
 
   return (
     <section id="profile" className="card profile">
-      <h3>Profil</h3>
+      <h3></h3>
       <div className="profile-left">
         <img src={photoSrc} alt={data.name} className="avatar" onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/200'; setPhotoSrc('https://via.placeholder.com/200') }} />
       </div>
